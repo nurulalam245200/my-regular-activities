@@ -10,14 +10,19 @@ const Activity = (props) => {
           <img className="card-image" src={img} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{name}</h2>
-          <p>{title}</p>
-          <div className="flex m-auto w-80 font-medium">
+          <h2 className="card-title text-xl text-blue-600">{name}</h2>
+          <p className="text-start text-base">{title}</p>
+          <div className="flex m-auto w-70 gap-3 text-sm text-violet-600 font-medium">
             <p>Time Schedule: {spendTime}</p>
             <p>Subject :{category}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button
+              onClick={() => props.handleAddToList(props.activity)}
+              className="btn btn-primary w-full"
+            >
+              ADD To Exercise
+            </button>
           </div>
         </div>
       </div>

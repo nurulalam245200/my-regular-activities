@@ -13,24 +13,29 @@ const Activities = () => {
       .then((data) => setActivities(data));
   }, []);
 
+  const handleAddToList = (activity) => {
+    console.log(activity);
+  };
   return (
     <div>
       <div className="main-container">
         <div className="activities-container">
           <div className="activities-title">
             <FontAwesomeIcon className="icon" icon={faHeart} />
-            <h1 className="text-3xl font-bold text-emerald-500 ">
-              My Regular Activity
-            </h1>
+            <h1 className="text-3xl font-bold ">My Regular Activity</h1>
           </div>
           <div className="activity-container mt-8">
             {activities.map((activity) => (
-              <Activity key={activity.id} activity={activity}></Activity>
+              <Activity
+                key={activity.id}
+                activity={activity}
+                handleAddToList={handleAddToList}
+              ></Activity>
             ))}
           </div>
         </div>
         <div className="calculation-container">
-          <Informations></Informations>
+          <Informations handleAddToList={handleAddToList}></Informations>
         </div>
       </div>
     </div>

@@ -3,8 +3,8 @@
   grid-template-columns: 4fr 1fr;
 }
 .activities-container {
-  background-color: rgb(238, 221, 199);
-  height: 100vh;
+  position: relative;
+  background-color: rgb(170, 185, 233);
 }
 .icon {
   color: crimson;
@@ -19,4 +19,33 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  margin: auto;
+  width: 90%;
+  margin-top: 30px;
+}
+.calculation-container {
+  position: sticky;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .activity-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .activity-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
 }
