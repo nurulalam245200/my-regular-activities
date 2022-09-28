@@ -3,3 +3,7 @@
   height: 50px;
   border-radius: 25px;
 }
+.calculation-container {
+  position: sticky;
+  top: 0;
+}
