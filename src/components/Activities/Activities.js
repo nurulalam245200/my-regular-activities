@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Activities.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import Informations from "../Informations/Informations";
+import Calculation from "../Calculation/Calculation";
 import Activity from "../Activity/Activity";
 const Activities = () => {
   const [activities, setActivities] = useState([]);
+  const [time, setTime] = useState([]);
 
   useEffect(() => {
     fetch("activities.json")
@@ -14,7 +15,8 @@ const Activities = () => {
   }, []);
 
   const handleAddToList = (activity) => {
-    console.log(activity);
+    const newExerciseTime = [...time, activity];
+    setTime(newExerciseTime);
   };
   return (
     <div>
@@ -35,7 +37,7 @@ const Activities = () => {
           </div>
         </div>
         <div className="calculation-container">
-          <Informations handleAddToList={handleAddToList}></Informations>
+          <Calculation></Calculation>
         </div>
       </div>
     </div>
