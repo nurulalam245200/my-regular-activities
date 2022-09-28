@@ -3,9 +3,9 @@ import "./Calculation.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 const Calculation = ({ time }) => {
-  let totalTime = 0;
+  let totalExereiseTime = 0;
   for (const exTime of time) {
-    totalTime = totalTime + exTime.spendTime;
+    totalExereiseTime = totalExereiseTime + exTime.spendTime;
   }
   return (
     <div className="calculation-container">
@@ -66,8 +66,7 @@ const Calculation = ({ time }) => {
           <h2 className="text-xl font-medium text-center">
             Practice Time :
             <span className="text-base text-slate-400">
-              {" "}
-              {totalTime} minutes
+              {totalExereiseTime} minutes
             </span>
           </h2>
         </div>
