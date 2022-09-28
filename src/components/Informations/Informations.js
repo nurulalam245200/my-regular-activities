@@ -1,10 +1,11 @@
 import React from "react";
 import Calculation from "../Calculation/Calculation";
 import Info from "../Info/Info";
+import "./Informations.css";
 
 const Informations = () => {
   return (
-    <div>
+    <div className="informations-container">
       <div>
         <div>
           <Info></Info>
