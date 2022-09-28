@@ -1,0 +1,17 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+.activities-container {
+  background-color: rgb(238, 221, 199);
+  height: 100vh;
+}
+.icon {
+  color: crimson;
+  font-size: 30px;
+}
+.activities-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
