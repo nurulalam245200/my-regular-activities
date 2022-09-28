@@ -36,7 +36,7 @@ const Activities = () => {
             ))}
           </div>
         </div>
-        <div className="calculation-container">
+        <div>
           <Calculation time={time}></Calculation>
         </div>
       </div>
