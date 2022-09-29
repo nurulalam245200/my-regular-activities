@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Calculation.css";
-import { addBreakToStorage } from "../../fakeData/fakedb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,7 +9,6 @@ const Calculation = ({ time }) => {
 
   const minBreak = () => {
     setRest(10);
-    addBreakToStorage();
   };
 
   const midBreak = () => {
@@ -130,8 +128,10 @@ const Calculation = ({ time }) => {
           </h2>
         </div>
       </div>
-      <div>
-        <button onClick={activitySuccess}>Add Activities</button>
+      <div className="mt-5">
+        <button className="btn btn-primary" onClick={activitySuccess}>
+          Add Activities
+        </button>
         <ToastContainer></ToastContainer>
       </div>
     </div>
