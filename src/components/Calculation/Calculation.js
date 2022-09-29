@@ -6,24 +6,29 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Calculation = ({ time }) => {
   const [rest, setRest] = useState(0);
-
+  const dataFromLocal = localStorage.getItem("break-time");
   const minBreak = () => {
     setRest(10);
+    localStorage.setItem("break-time", 10);
   };
 
   const midBreak = () => {
     setRest(20);
+    localStorage.setItem("break-time", 20);
   };
 
   const maxBreak = () => {
     setRest(30);
+    localStorage.setItem("break-time", 30);
   };
 
   const ultraMaxBreak = () => {
     setRest(40);
+    localStorage.setItem("break-time", 40);
   };
   const SuperMaxBreak = () => {
     setRest(50);
+    localStorage.setItem("break-time", 50);
   };
   const activitySuccess = () => {
     toast("Hey!You Complete your Achivement");
@@ -124,7 +129,9 @@ const Calculation = ({ time }) => {
         <div>
           <h2 className="text-xl font-medium text-center">
             Break Time :
-            <span className="text-base text-slate-400"> {rest} minutes</span>
+            <span className="text-base text-slate-400">
+              {dataFromLocal} minutes
+            </span>
           </h2>
         </div>
       </div>
