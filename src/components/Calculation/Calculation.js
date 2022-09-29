@@ -8,26 +8,26 @@ const Calculation = ({ time }) => {
   const [rest, setRest] = useState(0);
   const dataFromLocal = localStorage.getItem("break-time");
   const minBreak = () => {
-    setRest(10);
+    setRest((previous) => (previous = 10));
     localStorage.setItem("break-time", 10);
   };
 
   const midBreak = () => {
-    setRest(20);
+    setRest((previous) => (previous = 20));
     localStorage.setItem("break-time", 20);
   };
 
   const maxBreak = () => {
-    setRest(30);
+    setRest((previous) => (previous = 30));
     localStorage.setItem("break-time", 30);
   };
 
   const ultraMaxBreak = () => {
-    setRest(40);
+    setRest((previous) => (previous = 40));
     localStorage.setItem("break-time", 40);
   };
   const SuperMaxBreak = () => {
-    setRest(50);
+    setRest((previous) => (previous = 50));
     localStorage.setItem("break-time", 50);
   };
   const activitySuccess = () => {
