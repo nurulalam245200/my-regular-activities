@@ -1,8 +1,19 @@
 const addBreakToStorage = (value) => {
+  const time = value;
+  setTimeInStore(time);
+};
+const getTimeValueFromStore = () => {
+  let saveStore = localStorage.getItem("break-time");
   let breakTime = {};
-  const storedTime = localStorage.getItem("break-time");
-  if (storedTime) {
-    breakTime = JSON.parse(storedTime);
+  if (saveStore) {
+    breakTime = JSON.parse(saveStore);
   }
-  localStorage.setItem("break-time", JSON.stringify(breakTime));
+  return breakTime;
+};
+
+const setTimeInStore = (item, quantity) => {
+  const time = getTimeValueFromStore();
+  time[item] = quantity;
+  const stingified = JSON.stringify(time);
+  localStorage.setItem("break-time", stingified);
 };

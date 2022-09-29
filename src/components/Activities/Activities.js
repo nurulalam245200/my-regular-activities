@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Calculation from "../Calculation/Calculation";
 import Activity from "../Activity/Activity";
+import Question from "../Question/Question";
 const Activities = () => {
   const [activities, setActivities] = useState([]);
   const [time, setTime] = useState([]);
@@ -38,6 +39,9 @@ const Activities = () => {
         </div>
         <div>
           <Calculation time={time}></Calculation>
+        </div>
+        <div>
+          <Question></Question>
         </div>
       </div>
     </div>

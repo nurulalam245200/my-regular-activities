@@ -3,12 +3,14 @@ import "./Calculation.css";
 import { addBreakToStorage } from "../../fakeData/fakedb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Calculation = ({ time }) => {
   const [rest, setRest] = useState(0);
 
   const minBreak = () => {
     setRest(10);
-    addBreakToStorage(rest);
+    addBreakToStorage();
   };
 
   const midBreak = () => {
@@ -24,6 +26,9 @@ const Calculation = ({ time }) => {
   };
   const SuperMaxBreak = () => {
     setRest(50);
+  };
+  const activitySuccess = () => {
+    toast("Hey!You Complete your Achivement");
   };
   let totalExereiseTime = 0;
   for (const exTime of time) {
@@ -126,7 +131,8 @@ const Calculation = ({ time }) => {
         </div>
       </div>
       <div>
-        <button>Add Activities</button>
+        <button onClick={activitySuccess}>Add Activities</button>
+        <ToastContainer></ToastContainer>
       </div>
     </div>
   );
