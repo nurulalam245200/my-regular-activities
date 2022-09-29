@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calculation.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 const Calculation = ({ time }) => {
+  const [rest, setRest] = useState(0);
+
+  const minBreak = () => {
+    setRest(10);
+  };
+
+  const midBreak = () => {
+    setRest(20);
+  };
+
+  const maxBreak = () => {
+    setRest(30);
+  };
+
+  const ultraMaxBreak = () => {
+    setRest(40);
+  };
+  const SuperMaxBreak = () => {
+    setRest(50);
+  };
   let totalExereiseTime = 0;
   for (const exTime of time) {
     totalExereiseTime = totalExereiseTime + exTime.spendTime;
   }
+
   return (
     <div className="calculation-container">
       <div className="flex gap-4">
@@ -51,11 +72,36 @@ const Calculation = ({ time }) => {
       <div className="mt-8">
         <h1 className="text-2xl font-medium text-center mb-3">Break Time</h1>
         <div className="flex gap-1 mt-5 mb-5 justify-center items-center">
-          <button className="btn btn-outline btn-info">10</button>
-          <button className="btn btn-outline btn-success">20</button>
-          <button className="btn btn-outline btn-warning">30</button>
-          <button className="btn btn-outline btn-error">40</button>
-          <button className="btn btn-outline btn-primary">50</button>
+          <button
+            onClick={() => minBreak()}
+            className="btn btn-outline btn-info"
+          >
+            10
+          </button>
+          <button
+            onClick={() => midBreak()}
+            className="btn btn-outline btn-success"
+          >
+            20
+          </button>
+          <button
+            onClick={() => maxBreak()}
+            className="btn btn-outline btn-warning"
+          >
+            30
+          </button>
+          <button
+            onClick={() => ultraMaxBreak()}
+            className="btn btn-outline btn-error"
+          >
+            40
+          </button>
+          <button
+            onClick={() => SuperMaxBreak()}
+            className="btn btn-outline btn-primary"
+          >
+            50
+          </button>
         </div>
       </div>
       <div>
@@ -73,7 +119,7 @@ const Calculation = ({ time }) => {
         <div>
           <h2 className="text-xl font-medium text-center">
             Break Time :
-            <span className="text-base text-slate-400">{}minutes</span>
+            <span className="text-base text-slate-400"> {rest} minutes</span>
           </h2>
         </div>
       </div>
