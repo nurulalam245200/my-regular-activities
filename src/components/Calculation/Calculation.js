@@ -7,28 +7,31 @@ import "react-toastify/dist/ReactToastify.css";
 const Calculation = ({ time }) => {
   const [rest, setRest] = useState(0);
   const dataFromLocal = localStorage.getItem("break-time");
+  const addToLocalStore = (id, value) => {
+    localStorage.setItem(id, value);
+  };
   const minBreak = () => {
     setRest((previous) => (previous = 10));
-    localStorage.setItem("break-time", 10);
+    addToLocalStore("break-time", 10);
   };
 
   const midBreak = () => {
     setRest((previous) => (previous = 20));
-    localStorage.setItem("break-time", 20);
+    addToLocalStore("break-time", 20);
   };
 
   const maxBreak = () => {
     setRest((previous) => (previous = 30));
-    localStorage.setItem("break-time", 30);
+    addToLocalStore("break-time", 30);
   };
 
   const ultraMaxBreak = () => {
     setRest((previous) => (previous = 40));
-    localStorage.setItem("break-time", 40);
+    addToLocalStore("break-time", 40);
   };
   const SuperMaxBreak = () => {
     setRest((previous) => (previous = 50));
-    localStorage.setItem("break-time", 50);
+    addToLocalStore("break-time", 50);
   };
   const activitySuccess = () => {
     toast("Hey!You Complete your Achivement");
