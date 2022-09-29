@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Calculation.css";
+import { addBreakToStorage } from "../../fakeData/fakedb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 const Calculation = ({ time }) => {
@@ -7,6 +8,7 @@ const Calculation = ({ time }) => {
 
   const minBreak = () => {
     setRest(10);
+    addBreakToStorage(rest);
   };
 
   const midBreak = () => {
